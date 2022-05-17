@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { createSelectorHook, createStoreHook, useDispatch as DispatchHook } from 'react-redux'
+import { useSelector as useDefaultSelector, createStoreHook, TypedUseSelectorHook, useDispatch as DispatchHook } from 'react-redux'
 // import logger from 'redux-logger'
 
 import RootReducer from './rootReducer'
@@ -12,7 +12,7 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 
-// export const useSelector = createSelectorHook<RootState>()
+export const useSelector: TypedUseSelectorHook<RootState> = useDefaultSelector
 export const useStore = createStoreHook<RootState>()
 export const useDispatch = () => DispatchHook<AppDispatch>()
 
