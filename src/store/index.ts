@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useSelector as useDefaultSelector, createStoreHook, TypedUseSelectorHook, useDispatch as DispatchHook } from 'react-redux'
-// import logger from 'redux-logger'
 
 import RootReducer from './rootReducer'
 
