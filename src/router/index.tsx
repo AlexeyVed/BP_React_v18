@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { isNull } from 'util'
 
 import { authSelector } from '../selectors/authSelector'
 import { useSelector } from '../store'
@@ -21,10 +20,6 @@ const Router: FC<{}> = () => {
                         ) : null}
                     </Route>
                 })}
-                <Route
-                    path="*"
-                    element={<Navigate to={ROUTE.MAIN} replace />}
-                />
             </Routes>
         </BrowserRouter>
     )

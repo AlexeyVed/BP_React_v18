@@ -18,10 +18,10 @@ const usersSlice = createSlice({
   // Async actions
   extraReducers: (builder) => {
     // signIn
-    builder.addCase(signInThunk.pending, (state, action) => {
-      state.error = null
+    // builder.addCase(signInThunk.pending, (state, action) => {})
+    builder.addCase(signInThunk.fulfilled, (state, action) => {
+      state.auth = action.payload
     })
-    builder.addCase(signInThunk.fulfilled, (state, action) => { })
     builder.addCase(signInThunk.rejected, (state, action) => {
       state.error = action.payload
     })

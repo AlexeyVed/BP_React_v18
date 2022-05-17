@@ -10,9 +10,8 @@ const BaseLayout: FC<BaseLayoutProps> = () => {
     <>
       <div className='base-layout-title'>Base Layout</div>
       <hr />
-      <NavigateButton to={ROUTE.MAIN_SUB_1} />
-      <NavigateButton to={ROUTE.MAIN_SUB_2} />
-      <NavigateButton to={ROUTE.BASE_PAGE} />
+      <NavigateButton to={ROUTE.GENERAL} />
+      <NavigateButton to={ROUTE.MAIN} />
       <hr />
       <Outlet />
     </>

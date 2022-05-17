@@ -4,7 +4,7 @@ import { TSignInResponse } from './types'
 const mockAuth = () => new Promise((resolve) => {
   setTimeout(() => {
     resolve(true)
-  }, 1000)
+  }, 500)
 })
 
 export const signInThunk = createAsyncThunk(

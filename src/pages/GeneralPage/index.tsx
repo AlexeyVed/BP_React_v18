@@ -1,12 +1,11 @@
-
-import React, { FC, useEffect } from "react"
+import { FC, useEffect } from "react"
 import { authSelector } from "../../selectors/authSelector";
-import { useDispatch, useSelector } from "../../store";
+import { useDispatch, useSelector } from "../../store"
 import { signInThunk } from "../../store/auth/thunks";
 
-type TMainPageProps = {}
+type TBaseSub2Props = {}
 
-const MainPage: FC<TMainPageProps> = () => {
+const GeneralPage: FC<TBaseSub2Props> = () => {
   const dispatch = useDispatch();
   const authState = useSelector(authSelector);
 
@@ -14,7 +13,7 @@ const MainPage: FC<TMainPageProps> = () => {
     if (!authState.auth) dispatch(signInThunk())
   }, [dispatch, authState.auth])
 
-  return <>Main isLogged: {`${authState.auth}`}</>
+  return <>General isLogged: {`${authState.auth}`}</>
 }
 
-export default MainPage
+export default GeneralPage
