@@ -13,6 +13,9 @@ const usersSlice = createSlice({
   reducers: {
     setAuthAction: (state, action: PayloadAction<boolean>) => {
       state.auth = action.payload
+    },
+    signOutAction: (state) => {
+      state.auth = false
     }
   },
   // Async actions
@@ -28,5 +31,5 @@ const usersSlice = createSlice({
   }
 })
 
-export const { setAuthAction } = usersSlice.actions
+export const { setAuthAction, signOutAction } = usersSlice.actions
 export default usersSlice.reducer

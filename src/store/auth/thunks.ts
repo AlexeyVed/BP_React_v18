@@ -19,3 +19,8 @@ export const signInThunk = createAsyncThunk(
     }
   }
 )
+
+export const mockRefreshTokenThunk = createAsyncThunk(
+  'auth/mockRefreshTokenThunk',
+  async (data, { rejectWithValue }) => true
+)

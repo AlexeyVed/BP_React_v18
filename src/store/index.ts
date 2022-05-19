@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useSelector as useDefaultSelector, createStoreHook, TypedUseSelectorHook, useDispatch as DispatchHook } from 'react-redux'
+import { signOutAction } from './auth/slice'
+import { mockRefreshTokenThunk } from './auth/thunks'
 
 import RootReducer from './rootReducer'
 
@@ -21,4 +23,9 @@ if (process.env.NODE_ENV === 'development' && module.hot) {
     newRootReducer()
     store.replaceReducer(newRootReducer)
   })
+}
+
+export const authCallbacks = {
+  refreshToken: () => store.dispatch(mockRefreshTokenThunk()),
+  appLogOut: () => store.dispatch(signOutAction())
 }
